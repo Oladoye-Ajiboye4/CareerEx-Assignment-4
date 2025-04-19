@@ -11,7 +11,7 @@ function passOrFail(){
     
 }
 
-//passOrFail()
+passOrFail()
 
 
 function eligibleToVote(){
@@ -24,7 +24,7 @@ function eligibleToVote(){
     
 }
 
-//eligibleToVote()
+eligibleToVote()
 
 
 function checkScore(name, score){
@@ -40,7 +40,7 @@ function checkScore(name, score){
     }
 }
 
-//checkScore(prompt('Enter your name: '), parseInt(prompt('Enter your score: ')))
+checkScore(prompt('Enter your name: '), parseInt(prompt('Enter your score: ')))
 
 
 
@@ -68,14 +68,57 @@ function grantAccess(hasID, isAbove18){
     }
 }
 
-//``grantAccess(prompt('Has ID? true or false: '), prompt('Above 18? true or false:'))
+grantAccess(prompt('Has ID? true or false: '), prompt('Above 18? true or false:'))
 
 
 let scores = [87, 65, 92, 74, 58, 99, 43, 76, 81, 69];
-for(let i=0; scores.length > i; i++){
+for(let i=0; i < scores.length; i++){
     if (scores[i] >= 50){
-        print(scores[i], 'Pass')
+        console.log(scores[i], 'Pass')
     }else{
-        print(scores[i], 'Fail')
+        console.log(scores[i], 'Fail')
     }
 }
+
+
+const passed = (mathScore, engScore) => {
+    if (mathScore >= 50 && engScore >= 50){
+        return 'Yes'
+    } else{
+        return 'No'
+    }
+}
+console.log(passed(parseInt(prompt('Enter your Math score: ')), parseInt(prompt('Enter your English score: '))))
+
+
+function signupAllowed(email, phoneNo){
+    if (email || phoneNo){
+        return "You're allowed to sign up"
+    } else{
+        return "You're not allowed to sign up"
+    }
+}
+
+signupAllowed(prompt('Enter your email: '), parseInt(prompt('Enter your phone number: ')))
+
+
+function signup(username, password){
+    if (username || password){
+        return "Sign up successful!!"
+    } else{
+        return "Invalid Input"
+    }
+}
+
+signup(prompt('Enter your username: '), prompt('Enter your password: '))
+
+
+ function workStatus(hoursWorked) {
+    return hoursWorked >= 40 ? "Full-time" : "Part-time";
+}
+
+workStatus(parseInt(prompt('Enter your working hours: ')))
+
+
+const largerNum = (a, b) => (a > b ? a : b);
+console.log(largerNum(parseInt(prompt('a: ')), parseInt(prompt('b: '))))
